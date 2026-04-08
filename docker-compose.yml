@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "3001:3001"
+    environment:
+      - GEMINI_API_KEY=AIzaSyCk6kGNVBbsSJ4BnfO1HFULrUjuvy4nyVk
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
